@@ -82,6 +82,7 @@ export default function UserRoutes(app) {
    };
 
   const profile = async (req, res) => {
+    // note!
     let currentUser = req.session["currentUser"];
     currentUser = globalCurrentuser;
     console.log(currentUser)
