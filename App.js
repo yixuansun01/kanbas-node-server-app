@@ -10,9 +10,13 @@ import ModuleRoutes from "./Kanbas/modules/routes.js";
 import AssignmentRoutes from  "./Kanbas/assignments/routes.js";
 import SecurityController from "./SecurityController.js";
 import UserRoutes from "./Users/routes.js" ;
-import mongoose from "mongoose";
+import mongoose from "mongoose"; 
+// new add
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/kanbas'
+mongoose.connect(CONNECTION_STRING);
+// old version
+//mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 
-mongoose.connect("mongodb://127.0.0.1:27017/kanbas");
 // below codes - order matters
 const app = express();
 app.use(cors({
